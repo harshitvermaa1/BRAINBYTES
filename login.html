@@ -1,0 +1,101 @@
+`<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" type="png" href="logo.png">
+	<title>Login SignUp</title>
+	<link rel="stylesheet" type="text/css" href="loginStyle.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- It will redirect to the Home Page after submitting the form -->
+  <script>
+  $(document).ready(function(){
+    $("form").submit(function(){
+      alert("Great Job !");
+    });
+  });
+  </script>
+</head>
+<body>
+		<div class="form-box">
+			<div class="button-box">
+				<div id="btn"></div>
+				<button type="button" class="toggle-btn" id="log" onclick="login()" style="color: #fff;">Log In</button>
+				<button type="button" class="toggle-btn" id="reg" onclick="register()">Register</button>
+			</div>
+			<div class="social-icons">
+				<img src=".../img/fb2.png">
+				<img src=".../img/insta2.png">
+				<img src=".../img/tt2.png">
+			</div>
+			
+			<!-- Login Form -->
+			<form id="login" class="input-group" action="index.html">
+				<div class="inp">
+					<img src="img/user.png"><input type="text" id="email" class="input-field" placeholder="Username or Phone Number" style="width: 88%; border:none;" required="required">
+				</div>
+				<div class="inp">
+					<img src="img/password.png"><input type="password" id="password" class="input-field" placeholder="Password" style="width: 88%; border: none;" required="required">
+				</div>
+				<input type="checkbox" class="check-box">Remember Password
+				<button type="submit" class="submit-btn">Log In</button>
+			</form>
+
+
+			<div class="other" id="other">
+				<div class="instead">
+					<h3>or</h3>
+				</div>
+				<button class="connect" onclick="google()">
+					<img src="img/google.png"><span>Sign in with Google</span>
+				</button>
+			</div>
+			
+			<!-- Registration Form -->
+			<form id="register" class="input-group" action="/sign_up" method="POST">
+				<input type="text" class="input-field" id="name" name="name" placeholder="Name" required />
+				<br>
+				<input type="email" class="input-field" id="email" name="email" placeholder="Email" required />
+				<br>
+				<input type="number" class="input-field" id="phno" name="phno" placeholder="Mobile" required />
+				<br>
+				<input type="password" class="input-field" id="password" name="password" placeholder="Password" required />
+				<br>
+				<input type="password" class="input-field" id="confirmpassword" name="password" placeholder=" confirm Password" required />
+				<!-- <input type="submit" value="Submit" id="submit" />
+				<input type="text" class="input-field" placeholder="Full Name" required="required">
+				<input type="email" class="input-field" placeholder="Email Address" required="required">
+				<input type="password" class="input-field" placeholder="Create Password" name="psame" required="required">
+				<input type="password" class="input-field" placeholder="Confirm Password" name="psame" required="required"> -->
+				<!-- <input type="checkbox" class="check-box" id="chkAgree" onclick="goFurther()">I agree to the Terms & Conditions -->
+				<button type="submit" id="btnSubmit" class="submit-btn reg-btn">Register</button>
+			</form>
+		</div>
+		<script>
+			var x = document.getElementById("login");
+var y = document.getElementById("register");
+var z = document.getElementById("btn");
+var a = document.getElementById("log");
+var b = document.getElementById("reg");
+var w = document.getElementById("other");
+
+function register() {
+  x.style.left = "-400px";
+  y.style.left = "50px";
+  z.style.left = "110px";
+  w.style.visibility = "hidden";
+  b.style.color = "#fff";
+  a.style.color = "#000";
+}
+
+function login() {
+  x.style.left = "50px";
+  y.style.left = "450px";
+  z.style.left = "0px";
+  w.style.visibility = "visible";
+  a.style.color = "#fff";
+  b.style.color = "#000";
+}
+  
+		</script>
+</body>
+</html>
